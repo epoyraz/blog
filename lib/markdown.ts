@@ -142,7 +142,12 @@ export function renderMarkdownToHtml(markdown: string) {
       flushParagraph();
       flushBlockquote();
       const alt = escapeHtml(imgMatch[1]);
-      const src = escapeHtml(imgMatch[2]);
+      let src = imgMatch[2];
+      // Add basePath for absolute URLs
+      if (src.startsWith('/') && !src.startsWith('//')) {
+        src = '/blog' + src;
+      }
+      src = escapeHtml(src);
       html.push(
         `<figure>` +
           `<img src="${src}" alt="${alt}" class="pixel markdown-image" />` +
