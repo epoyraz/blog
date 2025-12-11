@@ -3,24 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "powershell -NoProfile -Command \"next dev\"",
     "build": "next build",
+    "build:windows": "cmd /c \"set NEXT_DISABLE_TURBOPACK=1&& next build\"",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
+    "next": "16.0.9",
     "react": "19.2.2",
-    "react-dom": "19.2.2",
-    "next": "16.0.9"
+    "react-dom": "19.2.2"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^25.0.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
-    "eslint-config-next": "16.0.9"
+    "eslint-config-next": "16.0.9",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
