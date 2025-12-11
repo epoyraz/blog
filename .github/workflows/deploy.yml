@@ -35,6 +35,9 @@ jobs:
         env:
           NEXT_DISABLE_TURBOPACK: 1
 
+      - name: List build output
+        run: ls -la
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
