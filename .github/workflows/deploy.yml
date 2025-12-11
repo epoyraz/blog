@@ -33,19 +33,6 @@ jobs:
       - name: Build with Next.js
         run: npm run build
 
-      - name: List build output
-        run: |
-          echo "Root directory:"
-          ls -la
-          echo "Checking for out directory:"
-          ls -la out || echo "No out directory"
-          echo ".next directory:"
-          ls -la .next
-          echo ".next/static:"
-          ls -la .next/static || echo "No static dir"
-          echo ".next/standalone:"
-          ls -la .next/standalone || echo "No standalone dir"
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
